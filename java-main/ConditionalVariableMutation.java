@@ -5,12 +5,18 @@ public class ConditionalVariableMutation {
 
         Scanner reader = new Scanner(System.in);
 
-        System.out.println("Please enter an integer as variable: ");
+        System.out.print("Please enter an integer as variable 'a': ");
         int a = reader.nextInt();
-        if (a % 1 == 0)
-        {
-            System.out.println(a);
+
+        int output1 = 0;
+
+        if (a % 2 == 0) {
+            output1++;
         }
+
+        System.out.println("The value of output1 is: " + output1);
+
+        reader.close();
 
         System.out.println("Please enter an integer between 0 and 30: ");
         int b = reader.nextInt();
@@ -28,21 +34,22 @@ public class ConditionalVariableMutation {
             System.out.println("More!");
         }
 
-        System.out.println("Please enter an integer between 0 and 100 as variable credits: ");
-        int c = reader.nextInt();
+        System.out.print("Please enter an integer between 0 and 100 as variable credits: ");
+        int credits = reader.nextInt();
 
-        System.out.println("Please enter a boolean (true/false) as variable isBonus: ");
-        boolean isBonus = reader.nextInt();
+        System.out.print("Please enter a boolean (true/false) as variable isBonus: ");
+        boolean isBonus = reader.nextBoolean();
 
-        if (c >= 50 && isBonus == false)
-        {
-            System.out.println("2");
+        int output3 = 50;
+
+        if (credits >= 50 && !isBonus) {
+            output3 -= 2;
+        } else if (credits < 50 && !isBonus) {
+            output3 -= 1;
         }
 
-        if (c <= 50 && isBonus == false)
-        {
-            System.out.println("1");
-        }
+        System.out.println("The value of output3 is: " + output3);
+
 
         System.out.println("Please enter an integer between 0 and 50: ");
         int d = reader.nextInt();

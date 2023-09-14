@@ -1,17 +1,15 @@
-import java.util.Scanner;
-
 public class CodingHours {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        int dailyCodingHours = 6;
+        int semesterWeeks = 17;
+        int workdaysPerWeek = 5;
+        int averageWorkHoursWeekly = 52;
 
-        int codepday = 6;
-        int semester = 85;
+        int totalCodingHours = dailyCodingHours * workdaysPerWeek * semesterWeeks;
 
-        double codinghours = codepday * semester
-        int average = 52
-        double percentage = average / codinghours
+        double percentageCodingHours = ((double) totalCodingHours / (averageWorkHoursWeekly * semesterWeeks)) * 100;
 
-        System.out.println("Hours spent with coding: " + codinghours);
-
-        System.out.println("The percentage of the coding hours in the semester: " + percentage);
+        System.out.println("Total coding hours in the semester: " + totalCodingHours + " hours");
+        System.out.println("Percentage of coding hours in the semester: " + percentageCodingHours + "%");
     }
 }

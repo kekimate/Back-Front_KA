@@ -5,21 +5,20 @@ public class CountFromTo {
 
         Scanner reader = new Scanner(System.in);
 
-        System.out.println("Please enter an number: ");
-        int a = reader.nextInt();
+        System.out.print("Please enter the first number: ");
+        int elso = reader.nextInt();
 
-        System.out.println("Please enter an other number: ");
-        int b = reader.nextInt();
+        System.out.print("Please enter the second number: ");
+        int masodik = reader.nextInt();
 
-        if (a > b)
-        {
-            System.out.println("The second number should be bigger");
+        if (masodik <= elso) {
+            System.out.println("The second number should be bigger.");
         }
         else
-        {
-            for (int i = 0; i < dif; i++) {
-
-                System.out.println(a + i);
+            {
+            System.out.println("Numbers between " + elso + " and " + masodik + " (excluding " + masodik + "):");
+            for (int i = elso; i < masodik; i++) {
+                System.out.println(i);
             }
         }
 

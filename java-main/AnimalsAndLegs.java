@@ -2,22 +2,20 @@ import java.util.Scanner;
 
 public class AnimalsAndLegs {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner reader = new Scanner(System.in);
+        System.out.print("Please enter the number of chickens: ");
+        int chickens = scanner.nextInt();
 
-        System.out.println("Kérem a csirkék számát: ");
-        int c = reader.nextInt();
+        System.out.print("Please enter the number of pigs: ");
+        int pigs = scanner.nextInt();
 
-        System.out.println("Kérem a disznók számát: ");
-        int d = reader.nextInt();
+        int chickenLegs = chickens * 2;
+        int pigLegs = pigs * 4;
+        int totalLegs = chickenLegs + pigLegs;
 
-        int csirkedb = c * 2;
-        int disznodb = d * 4;
+        System.out.println("The number of legs: " + totalLegs);
 
-        int labak = csirkedb + disznodb;
-
-        reader.close();
-
-        System.out.println("A lábak száma:" + labak);
+        scanner.close();
     }
 }

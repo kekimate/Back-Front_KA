@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class AverageOfInput {
     public static void main(String[] args) {
 
         Scanner reader = new Scanner(System.in);
@@ -25,6 +25,7 @@ public class Main {
 
         reader.close();
 
-        System.out.println("Sum: " + sum, "Average: " + avg);
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + avg);
     }
 }

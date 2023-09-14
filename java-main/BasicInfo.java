@@ -1,6 +1,5 @@
-import java.util.Scanner;
 
-public class Main {
+public class BasicInfo {
     public static void main(String[] args) {
         
         String name = "Máté";
@@ -12,7 +11,5 @@ public class Main {
         System.out.println("Age: " + age);
         System.out.println("height: " + height);
         System.out.println("Married: " + married);
-
-        reader.close();
     }
 }

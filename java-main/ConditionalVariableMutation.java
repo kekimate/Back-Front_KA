@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class ConditionalVariableMutation {
     public static void main(String[] args) {
 
         Scanner reader = new Scanner(System.in);
@@ -50,12 +50,12 @@ public class Main {
         System.out.println("Please enter an integer between 0 and 500: ");
         int time = reader.nextInt();
 
-        if(d % 4 = 0 && time < 200)
+        if(d % 4 == 0 && time < 200)
         {
             System.out.println("Check");
         }
 
-        if(d % 4 = 0 && time > 200)
+        if(d % 4 == 0 && time > 200)
         {
             System.out.println("Time out");
         }

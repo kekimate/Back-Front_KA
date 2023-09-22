@@ -26,7 +26,7 @@ public class AVariableModifications {
 
         int e = 8;
         // cube the value of e and print the new value
-        System.out.println(Math.pow(e, 2));
+        System.out.println(Math.pow(e, 3));
 
         int f1 = 123;
         int f2 = 345;

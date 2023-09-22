@@ -16,8 +16,6 @@ public class ConditionalVariableMutation {
 
         System.out.println("The value of output1 is: " + output1);
 
-        reader.close();
-
         System.out.println("Please enter an integer between 0 and 30: ");
         int b = reader.nextInt();
 

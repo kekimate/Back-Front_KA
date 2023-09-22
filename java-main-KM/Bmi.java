@@ -1,3 +1,4 @@
+import java.lang.Math;
 
 public class Bmi {
     public static void main(String[] args) {
@@ -5,7 +6,7 @@ public class Bmi {
         double massInKg = 81.2;
         double heightInM = 1.78;
 
-        double bmi = massInKg / heightInM;
+        double bmi = massInKg / Math.pow(heightInM, 2);
 
         System.out.println("Bmi: " + bmi);
     }

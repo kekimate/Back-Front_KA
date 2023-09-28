@@ -18,9 +18,9 @@ public class Fibonacci {
 
         for (int i = 2; i <= n; i++)
         {
-            int next = elozo + jelen;
+            int kovetkezo = elozo + jelen;
             elozo = jelen;
-            jelen = next;
+            jelen = kovetkezo;
         }
         return jelen;
     }

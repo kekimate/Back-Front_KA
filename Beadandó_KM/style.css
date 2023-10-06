@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+#cim{
+    text-align: center;
+    font-size: 80px;
+}
+
+.orarend {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.hetkoznapok, .hetvege {
+    flex: 1;
+}
+
+.nap {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.ora {
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.ora-1 {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.ora-2 {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+#gomb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

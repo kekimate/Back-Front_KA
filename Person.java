@@ -61,6 +61,8 @@ public class Person {
 
     public static void main(String[] args) {
         Person person = new Person("Frigyes", "Nagy", 1712, 1, 24);
+        Person person2 = new Person("Frigyes", "Nagy");
+        Person person3 = new Person(1712, 1, 24);
         person.printPerson();
     }
 }

@@ -64,5 +64,7 @@ public class Person {
         Person person2 = new Person("Frigyes", "Nagy");
         Person person3 = new Person(1712, 1, 24);
         person.printPerson();
+        person2.printPerson();
+        person3.printPerson();
     }
 }

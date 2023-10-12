@@ -64,5 +64,7 @@ public class Date {
         Date date2 = new Date(2300, 514, 330);
         Date date3 = new Date(2023, 5, 1);
         date.printDate();
+        date2.printDate();
+        date3.printDate();
     }
 }

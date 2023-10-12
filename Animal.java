@@ -41,6 +41,8 @@ public class Animal {
 
     public static void main(String[] args) {
         Animal animal = new Animal(4, 2, "Buksi");
+        Animal animal2 = new Animal(10, 6, "Csoki");
         animal.printAnimal();
+        animal2.printAnimal();
     }
 }

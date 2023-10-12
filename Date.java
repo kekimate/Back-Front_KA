@@ -60,7 +60,9 @@ public class Date {
     }
 
     public static void main(String[] args) {
-        Date date = new Date(2023, 5, 30);
+        Date date1 = new Date(2023, 5, 30);
+        Date date2 = new Date(2300, 514, 330);
+        Date date3 = new Date(2023, 5, 1);
         date.printDate();
     }
 }

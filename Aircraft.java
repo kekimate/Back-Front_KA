@@ -43,12 +43,10 @@ class F16 extends Aircraft {
         baseDamage = 30;
     }
 
-    @Override
     public String getType() {
         return "F16";
     }
 
-    @Override
     public boolean isPriority() {
         return false;
     }
@@ -60,12 +58,10 @@ class F35 extends Aircraft {
         baseDamage = 50;
     }
 
-    @Override
     public String getType() {
         return "F35";
     }
 
-    @Override
     public boolean isPriority() {
         return true;
     }

@@ -1,26 +1,28 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(66, 66, 66);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
 }
 
 .tic-tac-toe {
     text-align: center;
+    background-color: rgb(95, 95, 95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-/* Az előző példában található stílusokat felhasználhatod a reszponzív dizájnhoz is. */
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
     grid-gap: 10px;
-    width: 300px;
-    margin: 0 auto;
+    justify-content: center;
 }
-
 
 .cell {
     width: 100px;
@@ -28,29 +30,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    background-color: #ffffff;
+    font-size: 24px;
+    background-color: #929292;
     cursor: pointer;
-    border: 1px solid #ccc;
 }
 
 .cell:hover {
-    background-color: #eee;
+    background-color: #ddd;
 }
 
 .message {
     margin-top: 20px;
-    font-size: 1.5em;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #reset-button {
     margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 16px;
     cursor: pointer;
     background-color: #0074cc;
     color: #fff;
     border: none;
+    border-radius: 5px;
 }
 
 #reset-button:hover {

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Storage</title>
+</head>
+<body>
+    <select id="storageType">
+        <option value="local">Local Storage</option>
+        <option value="session">Session Storage</option>
+    </select>
+    <input type="text" id="key" placeholder="Key">
+    <input type="text" id="value" placeholder="Value">
+    <button onclick="AdatMentes()">Mentés</button>
+    <button onclick="AdatKeres()">Lekér</button>
+    <button onclick="AdatTorol()">Töröl</button>
+    <div id="output"></div>
+</body>
+<script>
+    function AdatMentes() {
+        const storageType = document.getElementById("storageType").value;
+        const key = document.getElementById("key").value;
+        const value = document.getElementById("value").value;
+
+        if (key && value) {
+            if (storageType === "local") {
+                localStorage.setItem(key, value);
+            } else if (storageType === "session") {
+                sessionStorage.setItem(key, value);
+            }
+            document.getElementById("output").innerText = "Mentve!";
+        } else {
+            document.getElementById("output").innerText = "Kérem a kulcsot.";
+        }
+    }
+
+    function AdatKeres() {
+        const storageType = document.getElementById("storageType").value;
+        const key = document.getElementById("key").value;
+        let data = null;
+
+        if (storageType === "local") {
+            data = localStorage.getItem(key);
+        } else if (storageType === "session") {
+            data = sessionStorage.getItem(key);
+        }
+
+        if (data) {
+            document.getElementById("output").innerText = `Adat "${key}": ${data}`;
+        } else {
+            document.getElementById("output").innerText = "Nem elérhető adat.";
+        }
+    }
+
+    function AdatTorol() {
+        const storageType = document.getElementById("storageType").value;
+
+        if (storageType === "local") {
+            localStorage.clear();
+        } else if (storageType === "session") {
+            sessionStorage.clear();
+        }
+        document.getElementById("output").innerText = "Törölve.";
+    }
+</script>
+</html>

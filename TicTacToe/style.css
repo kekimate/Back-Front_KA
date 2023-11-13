@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(73, 73, 73);
+}
+
+#tabla-container {
+    text-align: center;
+}
+
+#tabla {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.mezo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.mezo:hover {
+    background-color: gray;
+}
+
+#eredmeny {
+    font-size: 20px;
+}

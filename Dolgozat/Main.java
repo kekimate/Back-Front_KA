@@ -107,12 +107,11 @@ public class Main {
     public static void main(String[] args) {
         Virag sarga = new Virag("sárga");
         Virag kek = new Virag("kék");
-        Fa lila = new Fa("lila");
-        Fa narancssarga = new Fa("narancssárga");
+
         Fa lonc = new Fa("lonc");
         Fa narancs = new Fa ("narancs");
 
-        Kert kert = new Kert(sarga, kek, lila, narancssarga , lonc, narancs);
+        Kert kert = new Kert(sarga, kek, lonc, narancs);
 
         kert.render();
         System.out.println();

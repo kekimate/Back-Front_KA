@@ -109,10 +109,10 @@ public class Main {
         Virag kek = new Virag("kék");
         Fa lila = new Fa("lila");
         Fa narancssarga = new Fa("narancssárga");
-        //Fa lonc = new Fa("lonc");
-        //Fa narancs = new Fa ("nyarancs");
+        Fa lonc = new Fa("lonc");
+        Fa narancs = new Fa ("narancs");
 
-        Kert kert = new Kert(sarga, kek, lila, narancssarga);
+        Kert kert = new Kert(sarga, kek, lila, narancssarga , lonc, narancs);
 
         kert.render();
         System.out.println();

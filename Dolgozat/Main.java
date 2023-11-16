@@ -1,72 +1,81 @@
-abstract class Noveny
+class Noveny
 {
-    private String szin;
-    private double vizmennyiseg;
+    protected String nev;
+    protected int vizMennyiseg;
 
-    public Noveny(String szin)
+    public Noveny(String nev, int vizMennyiseg)
     {
-        this.szin = szin;
-        this.vizmennyiseg = 0;
+        this.nev = nev;
+        this.vizMennyiseg = vizMennyiseg;
     }
 
-    public boolean vanVizszukseg()
+    public boolean vizSzukseg()
     {
-        return vizmennyiseg < szuksegesvizmennyiseg();
+        return this.vizMennyiseg < getVizigeny();
     }
 
-    public void ontoz(int mennyiseg)
+    public void ontoz(int vizMennyiseg)
     {
-        double felvehetomennyiseg = mennyiseg * vizfelvehetoseg();
-        vizmennyiseg += felvehetomennyiseg;
+        if (vizSzukseg())
+        {
+            int felvehetoViz = (int) (vizMennyiseg * getontozesiArany());
+            this.vizMennyiseg += felvehetoViz;
+        }
     }
 
-    protected abstract double vizfelvehetoseg();
+    protected int getVizigeny()
+    {
+        return 0;
+    }
 
-    protected abstract double szuksegesvizmennyiseg();
+    protected double getontozesiArany()
+    {
+        return 0.0;
+    }
 
-    @Override
     public String toString()
     {
-        return "A " + szin + " növénynek vízre van szüksége";
+        return "A " + this.nev + "nak vízre van szüksége";
     }
 }
 
 class Virag extends Noveny
 {
-    public Virag(String szin) {
-        super(szin);
-    }
-
-    @Override
-    protected double vizfelvehetoseg()
+    public Virag(String nev, int vizMennyiseg)
     {
-        return 0.75;
+        super(nev, vizMennyiseg);
     }
 
     @Override
-    protected double szuksegesvizmennyiseg()
+    protected int getVizigeny()
     {
         return 5;
+    }
+
+    @Override
+    protected double getontozesiArany()
+    {
+        return 0.75;
     }
 }
 
 class Fa extends Noveny
 {
-    public Fa(String szin)
+    public Fa(String nev, int vizMennyiseg)
     {
-        super(szin);
+        super(nev, vizMennyiseg);
     }
 
     @Override
-    protected double vizfelvehetoseg()
-    {
-        return 0.4;
-    }
-
-    @Override
-    protected double szuksegesvizmennyiseg()
+    protected int getVizigeny()
     {
         return 10;
+    }
+
+    @Override
+    protected double getontozesiArany()
+    {
+        return 0.4;
     }
 }
 
@@ -74,53 +83,50 @@ class Kert
 {
     private Noveny[] novenyek;
 
-    public Kert(Noveny... novenyek)
+    public Kert(Noveny[] novenyek)
     {
         this.novenyek = novenyek;
     }
 
-    public void ontoz(int mennyiseg)
+    public void kertAllapot()
     {
-        System.out.println("öntozés " + mennyiseg);
-
         for (Noveny noveny : novenyek)
         {
-            if (noveny.vanVizszukseg())
-            {
-                noveny.ontoz(mennyiseg / novenyek.length);
-            }
+            System.out.println(noveny.toString());
         }
     }
 
-    public void render()
+    public void ontoz(int vizMennyiseg)
     {
-        System.out.println("A kert:");
-
+        System.out.println("\nÖntözés " + vizMennyiseg);
         for (Noveny noveny : novenyek)
         {
-            System.out.println("    " + noveny);
+            noveny.ontoz(vizMennyiseg);
+            if (noveny.vizSzukseg())
+            {
+                System.out.println(noveny.toString());
+            } else
+            {
+                System.out.println("A " + noveny.nev + "nak nincs szüksége vízre");
+            }
         }
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Virag sarga = new Virag("sárga");
-        Virag kek = new Virag("kék");
+        Virag sargaVirag = new Virag("sárga virág", 3);
+        Virag kekVirag = new Virag("kék virág", 7);
+        Fa loncFa = new Fa("lonc fá", 8);
+        Fa narancsFa = new Fa("narancs fá", 12);
 
-        Fa lonc = new Fa("lonc");
-        Fa narancs = new Fa ("narancs");
+        Noveny[] novenyek = {sargaVirag, kekVirag, loncFa, narancsFa};
+        Kert kert = new Kert(novenyek);
 
-        Kert kert = new Kert(sarga, kek, lonc, narancs);
-
-        kert.render();
-        System.out.println();
-
+        kert.kertAllapot();
         kert.ontoz(40);
-        kert.render();
-        System.out.println();
-
+        kert.kertAllapot();
         kert.ontoz(70);
-        kert.render();
+        kert.kertAllapot();
     }
 }

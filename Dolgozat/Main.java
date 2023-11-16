@@ -109,6 +109,8 @@ public class Main {
         Virag kek = new Virag("kék");
         Fa lila = new Fa("lila");
         Fa narancssarga = new Fa("narancssárga");
+        //Fa lonc = new Fa("lonc");
+        //Fa narancs = new Fa ("nyarancs");
 
         Kert kert = new Kert(sarga, kek, lila, narancssarga);
 
